@@ -36,4 +36,11 @@ This project demonstrates how to secure a web application using **Spring Boot** 
   - Admin:
       - Username: `admin`
       - Password: `admin123`
-
+# Demo
+![Admin Image](src/main/resources/img/admin.png)
+![Admin Log Image](src/main/resources/img/admin_log.png)
+![Database Image](src/main/resources/img/db.png)
+![Hello Admin Image](src/main/resources/img/hello admin.png)
+![Hello User Image](src/main/resources/img/hello_user.png)
+![User Image](src/main/resources/img/user.png)
+![User Log Image](src/main/resources/img/user_log.png)
