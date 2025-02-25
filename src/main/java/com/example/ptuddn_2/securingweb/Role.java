@@ -1,10 +1,12 @@
 package com.example.ptuddn_2.securingweb;
 
 import jakarta.persistence.*;
+import java.util.Set;
 
 @Entity
 @Table(name = "roles")
 public class Role {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -12,29 +14,24 @@ public class Role {
     @Column(nullable = false, unique = true)
     private String name;
 
-    // Constructor mặc định (bắt buộc cho JPA)
-    public Role() {
-    }
+    // Mối quan hệ giữa Role và User: một role có thể có nhiều user
+    @ManyToMany(mappedBy = "roles")
+    private Set<User> users;
 
-    // Constructor có tham số (dùng để khởi tạo nhanh)
+    // Constructors
+    public Role() {}
+
     public Role(String name) {
         this.name = name;
     }
 
     // Getters và Setters
-    public Long getId() {
-        return id;
-    }
+    public Long getId() { return id; }
+    public void setId(Long id) { this.id = id; }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+    public String getName() { return name; }
+    public void setName(String name) { this.name = name; }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
+    public Set<User> getUsers() { return users; }
+    public void setUsers(Set<User> users) { this.users = users; }
 }
